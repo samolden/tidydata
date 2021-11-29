@@ -80,3 +80,8 @@ colnames(df2)<-gsub("BodyBody", "Body", colnames(df2))
 df3 <- aggregate(. ~subjectID + actions, df2, mean)
 
 write.table(df3, file = "tidydata.txt", row.names = FALSE)
+
+### create codebook
+
+library(dataMaid)
+makeCodebook(df3)
